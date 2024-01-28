@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[metadata]
+name = "pysocket"
+version = "0.1.0"
+description = "Simple example of socket programming in python"
+authors = ["Jonas Andersson"]
+
+[options]
+packages = ["pysocket"]
+
+[options.extras_require]
+test = ["pytest>=6.2.4"]

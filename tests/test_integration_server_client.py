@@ -1,8 +1,8 @@
 # test_integration.py
 import pytest
 import threading
-from server import Server
-from client import Client
+from pysocket.server import Server
+from pysocket.client import Client
 
 def test_client_server_integration():
     # Start the server in a separate thread

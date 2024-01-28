@@ -3,7 +3,7 @@ import pytest
 import socket
 from unittest.mock import MagicMock
 from unittest.mock import patch
-from server import Server
+from pysocket.server import Server
 
 @patch('socket.socket')
 def test_start_server(mock_socket_class):
