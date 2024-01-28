@@ -6,15 +6,17 @@ class Client:
         self.port = port
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.MSG_LENGTH = 1024
+        self.last_received_message = None
 
     def start(self):
         self.client_socket.connect((self.host, self.port))
+        self.client_socket.sendall(b"Hello from client.")
         while True:
             data = self.client_socket.recv(self.MSG_LENGTH)
+            self.last_received_message = data.decode()
             if not data:
                 break
             print(f"[CLIENT] Received from server: {data.decode()}")
-            self.send_message("Hello from client.")
             break
 
 
